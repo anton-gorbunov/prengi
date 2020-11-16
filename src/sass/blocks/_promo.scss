@@ -1,0 +1,115 @@
+.promo{
+    /* background: url(../img/bg/main_bg.jpg) center center / cover no-repeat; */
+    padding-top:39px;
+    min-height: 700px;
+    position:relative;
+    .container{
+        position:relative;
+    }
+    &__wrapper{
+        display:grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: 65px auto;
+        grid-auto-rows: auto;
+        align-items: center;
+        row-gap:27px;
+        z-index: 10;
+    }
+    &__list{
+        list-style-type: none;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__link{
+        color: #ffffff;
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 26px;
+        text-align: right;
+        text-transform: uppercase;
+        &:hover{
+            color:#fff;
+        }
+    }
+    &__titles{
+        align-self:flex-start;
+    }
+    &__title{
+        margin-top: 106px;
+        color: #ffffff;
+        font-size: 42px;
+        font-weight: 700;
+        line-height: 48px;
+        text-align: left;
+    }
+    &__subtitle{
+        margin-top: 27px;
+        color:#fff;
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 30px;
+        text-align: left;
+    }
+    &__img{
+       align-self:flex-end;
+       justify-self: flex-end;
+    }
+    &__button{
+        margin-top: 39px;
+        &:focus{
+            outline:none;
+        }
+    }
+    &__slider{
+        width:100%;
+        position: absolute;
+        top:0;
+        left:0;
+        z-index:-1;
+    }
+    &__slider-wrapper{
+        width:100%;
+        overflow: hidden;
+       
+    }
+    &__slider-nav{
+        position:absolute;
+        width:100px;
+        justify-content: space-between;
+        display:flex;
+        align-items:center;
+        bottom:68px;
+        left:50%;
+        transform:translateX(-50%);
+        
+    }
+   
+    &__slider-round{
+        width: 11px;
+        height: 11px;
+        border: 1px solid #fff;
+        border-radius:50%;
+        cursor:pointer;
+        &_active{
+            background-color:#fff;
+            transition: all 0.3s;
+        }
+    }
+    &__slider-inner{
+        display:flex;
+        transition: all 1.2s;
+    }
+   
+    &__slider-next, &__slider-prev{
+       width:20px;
+       height:100%;
+       background-color:transparent;
+       cursor: pointer;
+       img{
+           display: block;
+           margin: 0 auto;
+       }
+       
+       
+    }
+}

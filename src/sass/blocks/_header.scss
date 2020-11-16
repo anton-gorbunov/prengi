@@ -1,0 +1,33 @@
+.header{
+    padding:19px 0 16px 0;
+    &__wrapper{
+        display: flex;
+        justify-content: space-between;
+    }
+    &-block{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        &__descr{
+            display: flex;
+            flex-direction: column;
+            padding-left: 11px;
+        }
+        &__title{
+            font-size: 14px;
+            font-weight: 700;
+        }
+        &__link, &__adress{
+            display: block;
+            color: #242424;
+            font-size: 12px;
+            font-weight: 300;
+            line-height: 18px;
+            text-align: left;
+        }
+        
+           
+        
+    }
+    
+}
