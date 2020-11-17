@@ -10,9 +10,15 @@
     max-width:1140px;
     margin:0 auto;
 }
+.red{
+    background-color:red;
+    min-height:500px;
+}
 
 @import 'blocks/header';
 @import 'blocks/promo';
 @import 'blocks/buttons';
+
+@import 'blocks/media';
 
 

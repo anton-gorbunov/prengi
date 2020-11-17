@@ -1,0 +1,205 @@
+@media (max-width:1200px){
+    .container{
+        max-width:960px;
+    }
+    .header{
+        &-block__adress, &-block__link{
+            font-size: 11px;
+        }
+    }
+    .promo{
+     min-height:$width1;
+        &__title{
+            font-size: 36px;
+        }
+        &__subtitle{
+            font-size: 22px;
+        }
+        &__wrapper{
+            grid-template-rows: 65px 477px;
+        }
+        &__img{
+            height:100%;
+            img{
+                height:100%;
+            }
+        }
+        &__slider-nav{
+            bottom:30px;            
+        }
+        &__slide{
+            height: $width1;
+            img{
+                height:100%;
+                width:100%;
+            }
+        }
+    }
+}
+@media (max-width:992px){
+     .container{
+        max-width:720px;
+    }
+    .header{
+        &-block__adress{
+            display: none;
+        }
+        &-block__link{
+            font-size: 10px;
+        }
+    }
+    .promo{
+        min-height:$width2;
+        &__wrapper{
+            grid-template-columns: 1fr 2fr;
+            grid-template-rows: 65px 450px;
+        }
+        &__titles{
+            grid-column:1/3;
+            grid-row:2/3;
+        }
+        &__title{
+            margin-top: 50px;
+        }
+        &__img{
+            display:none;
+        }
+        &__slide{
+            height:$width2;
+        }
+
+    }
+}
+@media (max-width:768px){
+    .container{
+        max-width:540px;
+    }
+    .header{
+            display:none;
+        
+    }
+    .promo{
+        min-height:100vh;
+        padding-top: 0;
+        &__wrapper{
+            padding-top: 50px;
+        }
+        &__slider-nav{
+            display: none;
+        }
+        &__fix-menu{
+            display:block;
+            width:100%;
+            background-color:$main-color;
+            height:30px;
+            position:fixed;
+            top:0;
+        }
+        &__hamburger{
+            position:absolute;
+            top:50%;
+            transform:translateY(-50%);
+            right:10px;
+            width:25px;
+            
+            span{
+                width:100%;
+                background-color:#fff;
+                height:2px;
+                display: block;
+                margin-bottom: 5px;
+                
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
+            &_active{
+               
+                span{
+                    transition: all 0.5s;
+                    margin-bottom: -2px;
+                    &:nth-child(1){
+                        transform: translateY(1px) rotate(-45deg);
+                    }
+                    &:nth-child(2){
+                        display: none;
+                    }
+                    &:nth-child(3){
+                        transform: translateY(1px) rotate(45deg);
+                    }
+                }
+            }
+        }
+        &__menu{
+            width:50%;
+            height:100vh;
+            position:absolute;
+            top:0;
+            left:-100%;
+            background-color:rgba(0,0,0,0.8);
+            transition: all 1s;
+            &_active{
+                left:0;
+                
+            }
+        }
+        &__list{
+            flex-direction:column;
+            margin-top: 150px;
+            padding-left: 60px;
+        }
+        &__link{
+            font-size: 20px;
+        }
+        &__item{
+            margin-bottom: 20px;
+            width:100px;
+            position: relative;
+            &:before{
+                content:'';
+                display: block;
+                width:15px;
+                height:15px;
+                border-radius:50%;
+                border:1px solid #fff;
+                position:absolute;
+                left:-30px;
+                top:5px;
+            }
+        }
+        &__title, &__subtitle{
+            text-align: center;
+        }
+        &__button{
+            margin:100px auto 0 auto;
+            display: block;
+        }
+        &__slide{
+            height:100vh;
+        }
+    }
+}
+@media (max-width:576px){
+    .container{
+        width:100%;
+        padding:0 10px;
+    }
+    .promo{
+        &__title{
+            margin-top: 20px;
+            font-size: 30px;
+        }
+        &__subtitle{
+            font-size: 20px;
+        }
+        &__menu{
+            width:70%;
+        }
+        &__list{
+            padding-left: 50px;
+        }
+        &__link{
+            font-size: 18px;
+        }
+    }
+}

@@ -1,12 +1,14 @@
 .promo{
     /* background: url(../img/bg/main_bg.jpg) center center / cover no-repeat; */
-    padding-top:39px;
-    min-height: 700px;
+    
+    min-height:$width1;
     position:relative;
+    padding-top:39px;
     .container{
-        position:relative;
+        /* position:relative; */
     }
     &__wrapper{
+        
         display:grid;
         grid-template-columns: repeat(2,1fr);
         grid-template-rows: 65px auto;
@@ -99,6 +101,12 @@
         display:flex;
         transition: all 1.2s;
     }
+    &__slide{
+        img{
+            object-fit: cover;
+           
+        }
+    }
    
     &__slider-next, &__slider-prev{
        width:20px;
@@ -111,5 +119,24 @@
        }
        
        
+    }
+    &__fix-menu{
+        display:none;
+    }
+    &__overlay{
+        background-color: rgba(0, 0, 0, 0.75);
+        position: fixed;
+        top:0px;
+        left:0px;
+        height:100vh;
+        width:100%;
+        visibility: hidden;
+        opacity:0;
+        transition:all 1s;
+        &_active{
+            visibility:visible;
+            opacity: 1;
+            
+        }
     }
 }
