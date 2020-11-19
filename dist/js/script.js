@@ -76,8 +76,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const hamburger = document.querySelector('.promo__hamburger'),
           menu = document.querySelector('.promo__menu'),
-          overlay = document.querySelector('.promo__overlay');
+          overlay = document.querySelector('.promo__overlay'),
           menuLinks = document.querySelectorAll('.promo__link');
+         
+          
     
     hamburger.addEventListener('click',() => {
         menu.classList.toggle('promo__menu_active');
@@ -87,9 +89,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     menuLinks.forEach(item => {
         item.addEventListener('click',() => {
-            menu.classList.toggle('promo__menu_active');
-            overlay.classList.toggle('promo__overlay_active');
-            hamburger.classList.toggle('promo__hamburger_active');
+            menu.classList.remove('promo__menu_active');
+            overlay.classList.remove('promo__overlay_active');
+            hamburger.classList.remove('promo__hamburger_active');
         });
     });
 });

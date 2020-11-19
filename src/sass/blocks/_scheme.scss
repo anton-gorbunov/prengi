@@ -1,0 +1,65 @@
+.scheme{
+    padding:79px 0 81px 0;
+    &__questions, &__answers{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows:255px;
+        grid-auto-rows:255px;
+        column-gap: 30px;
+    }
+    &__questions{
+        .scheme-block{
+            background-image: url(../icons/prengi_icons/question.png);
+            background-repeat: no-repeat;
+            background-position: bottom right;
+        }
+    }
+    &__answers{
+        .scheme-block{
+            background-image: url(../icons/prengi_icons/ok.png);
+            background-repeat: no-repeat;
+            background-position: bottom right;
+        }
+    }
+    &-block{
+        border: 1px solid #ececec;
+        display:flex;
+        flex-direction: column;
+        align-items:center;
+        padding:0 60px 0 60px;
+        &__descr{
+            color: #393939;
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 26px;
+            text-align: center;
+            margin-top: 5px;
+        }
+        &__subtitle{
+            color: #393939;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 26px;
+            text-align: center;
+            margin-top: 5px;
+        }&__img{
+            margin-top: 30px;
+        }
+       
+    }
+    &__img{
+        display:block;
+        margin:50px auto 0 auto;
+    }
+    &__title{
+        margin-top: 33px;
+        margin-bottom: 37px;
+        text-align: center;
+        color: #393939;
+        font-size: 48px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    
+}
