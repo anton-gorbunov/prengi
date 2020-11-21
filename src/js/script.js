@@ -41,8 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
-
     function startSlideShow(){
         if (numWidth > 768){
         window.timerId = window.setInterval(showNextSlide, 4000);
@@ -68,9 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
         showActiveNav();
         slidesField.style.transform = `translateX(-${offset}px)`;
     }
-
     startSlideShow();
-
 
     //hamburger
 
@@ -79,8 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
           overlay = document.querySelector('.promo__overlay'),
           menuLinks = document.querySelectorAll('.promo__link');
          
-          
-    
     hamburger.addEventListener('click',() => {
         menu.classList.toggle('promo__menu_active');
         overlay.classList.toggle('promo__overlay_active');
@@ -94,4 +88,53 @@ document.addEventListener('DOMContentLoaded', () => {
             hamburger.classList.remove('promo__hamburger_active');
         });
     });
+
+    // tabsSlider
+    const prevBtn = document.querySelector('.decision__slider-left'),
+          nextBtn = document.querySelector('.decision__slider-right'),
+          slideItems = document.querySelectorAll('.decision__slider-item');
+          navLinks = document.querySelectorAll('.decision__link');
+    let curentSlide = 0;
+
+    function hideContent() {
+        slideItems.forEach(item => {
+            item.classList.remove('show');
+        });
+        navLinks.forEach(link =>{
+            link.classList.remove('decision__link_active');
+        });
+    }
+    function showContent(i){
+        slideItems[i].classList.add('show');
+        navLinks[i].classList.add('decision__link_active');
+    }
+    navLinks.forEach((link,i) => {
+        link.addEventListener('click',(event) => {
+            event.preventDefault();
+            if (event.target.closest('.decision__link')){
+                hideContent();
+                showContent(i);
+                curentSlide = i;
+            }
+            
+        });
+    });
+    nextBtn.addEventListener('click',() => {
+        curentSlide++;
+        hideContent();
+        if (curentSlide == slideItems.length){
+            curentSlide = 0;
+        }
+        showContent(curentSlide);
+    });
+
+    prevBtn.addEventListener('click',() => {
+        if (curentSlide == 0){
+            curentSlide = slideItems.length;
+        }
+        curentSlide--;
+        hideContent();
+        showContent(curentSlide);
+    });
+
 });
