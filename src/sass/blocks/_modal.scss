@@ -1,0 +1,61 @@
+.overlay{
+    @include overlay;
+    z-index: 9999;
+
+}
+.modal{
+    position:relative;
+    width:380px;
+    min-height:140px;
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    background:url(../img/bg/sec_bg.jpg)center center / cover no-repeat;
+    border-radius:10px;
+    padding:10px 10px 30px 10px;
+    
+    &__input{
+        width:268px;
+        height:45px;
+        border-radius:10px;
+        border: 1px solid rgba(0, 0, 0, 0.21);
+        padding-left: 28px;
+        color: #101010;
+        font-size: 13px;
+        font-weight: 300;
+        outline:none;
+        margin-bottom: 20px;
+    }
+    &__form{
+        margin-top: 20px;
+       display:flex;
+       flex-direction: column;
+       align-items: center;
+    }
+    &__close{
+        font-size: 40px;
+        font-weight: 700;
+        color:#fff;
+        position:absolute;
+        top:0px;
+        right:10px;
+        line-height: 40px;
+        cursor:pointer;
+    }
+    &__title{
+        color:#fff;
+        text-align: center;
+        margin-top: 20px;
+        font-size: 20px;
+    }
+    &__button{
+        margin-top: 20px;
+    }
+    &__subtitle{
+        font-size: 16px;
+        color:#fff;
+        margin-top: 20px;
+        text-align: center;
+    }
+}

@@ -123,19 +123,6 @@
         display:none;
     }
     &__overlay{
-        background-color: rgba(0, 0, 0, 0.75);
-        position: fixed;
-        top:0px;
-        left:0px;
-        height:100vh;
-        width:100%;
-        visibility: hidden;
-        opacity:0;
-        transition:all 1s;
-        &_active{
-            visibility:visible;
-            opacity: 1;
-            
-        }
+        @include overlay;
     }
 }

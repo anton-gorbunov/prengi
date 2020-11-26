@@ -1,12 +1,12 @@
 .variants{
-    min-height:580px;
+    min-height:600px;
     background: url(../img/bg/bg_3.jpg) center center / cover no-repeat;
-    padding: 79px 0 0 0;
+    padding: 79px 0 ;
     
     &__wrapper{
         display:grid;
         grid-template-columns: repeat(2,1fr);
-        grid-template-rows:580px;
+        grid-template-rows:auto;
         grid-auto-rows: auto;
     }
     &__title{

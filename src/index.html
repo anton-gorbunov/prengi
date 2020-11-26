@@ -5,19 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="title" content="Prengi">
     <meta name="description" content="Управление вашим бизнесом">
-     <!-- Open Graph / Facebook -->
-   <!--  <meta property="og:type" content="website">
-    <meta property="og:url" content="https://metatags.io/">
-    <meta property="og:title" content="GlobalOpt">
-    <meta property="og:description" content="Доставка грузов из Китая">
-    <meta property="og:image" content="img/work/2.jpg">
-
-    <!-- Twitter -->
-    <!-- <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://metatags.io/">
-    <meta property="twitter:title" content="GlobalOpt">
-    <meta property="twitter:description" content="Доставка грузов из Китая">
-    <meta property="twitter:image" content="img/work/2.jpg"> -->
 
    <!--  favicon -->
     <link rel="apple-touch-icon" sizes="57x57" href="icons/favicon/apple-icon-57x57.png">
@@ -107,7 +94,7 @@
             </div>
         </div>
     </header>
-    <section class="promo">
+    <section class="promo" id="promo">
         <div class="promo__overlay"></div>
         <div class="promo__fix-menu">
             <div class="promo__hamburger">
@@ -122,11 +109,21 @@
                 <div class="promo__menu">
                     <nav>
                         <ul class="promo__list">
-                            <li class="promo__item"><a href="#" class="promo__link">главная</a></li>
-                            <li class="promo__item"><a href="#" class="promo__link">Модули</a></li>
-                            <li class="promo__item"><a href="#" class="promo__link"> Отрасли</a></li>
-                            <li class="promo__item"><a href="#" class="promo__link"> О нас</a></li>
-                            <li class="promo__item"><a href="#" class="promo__link">Наши обязательства</a></li>
+                            <li class="promo__item">
+                                <a href="#promo" class="promo__link">главная</a>
+                            </li>
+                            <li class="promo__item">
+                                <a href="#footer" class="promo__link">Модули</a>
+                            </li>
+                            <li class="promo__item">
+                                <a href="#decision" class="promo__link"> Отрасли</a>
+                            </li>
+                            <li class="promo__item">
+                                <a href="#advantages" class="promo__link"> О нас</a>
+                            </li>
+                            <li class="promo__item">
+                                <a href="#scheme" class="promo__link">Наши обязательства</a>
+                            </li>
                         </ul>
                     </nav>
                 </div>
@@ -136,7 +133,7 @@
                         PRENGI - Платформа для прозрачного<br>
                         управления бизнесом
                     </h2>
-                    <button class="button promo__button">Получить доступ</button>
+                    <button class="button promo__button" data-modal>Получить доступ</button>
                 </div>
                 <div class="promo__img">
                     <img src="img/phone.png" alt="phone">
@@ -204,8 +201,8 @@
                 </div>
             </div>
             <img src="icons/prengi_icons/center.png" alt="arrow_down" class="scheme__img">
-            <h2 class="scheme__title">С PRENGI</h2>
-            <div class="scheme__answers">
+            <h2 class="scheme__title" id="scheme">С PRENGI</h2>
+            <div class="scheme__answers" >
                 <div class="scheme-block">
                     <div class="scheme-block__img">
                         <img src="icons/prengi_icons/4.png" alt="4">
@@ -233,7 +230,7 @@
             </div>
         </div>
     </section>
-    <section class="decision">
+    <section class="decision" id="decision">
        <div class="container">
         <h2 class="decision__title">
             Prengi предоставляет экспертные решения <br>для Вашей отрасли
@@ -302,7 +299,7 @@
        </div>
     </section>
 
-    <section class="advantages">
+    <section class="advantages" id="advantages">
         <div class="container">
             <h2 class="advantages__title">
                 Преимущества Prengi для<br> Вашей отрасли
@@ -352,7 +349,7 @@
         <div class="container">
             <h2 class="variants__title">Варианты развертывания<br> Ваших данных</h2>
             <div class="variants__wrapper">
-                <div class="variants-block">
+                <div class="variants-block ">
                         <div class="variants-block__wrapper">
                             <div class="variants-block__subtitle">Облачное хранилище</div>
                             <div class="variants-block__descr">
@@ -374,6 +371,147 @@
         
         </div>
     </section>
+
+    <section class="contacts">
+        <div class="container">
+            <div class="contacts__wrapper">
+                <div class="contacts__square"></div>
+                <div class="contacts__square"></div>
+                <div class="contacts__square"></div>
+                <div class="contacts__square"></div>
+                <div class="contacts__img">
+                    <img src="icons/work.png" alt="work">
+                </div>
+            </div>
+            <h2 class="contacts__title">
+                Приступить очень просто!<br>
+                Нужно получить доступ и начать работу!
+            </h2>
+            <button class="button contacts__button" data-modal>связаться с нами</button>
+        </div>
+    </section>
+
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer__wrapper">
+                <div class="footer__about">
+                    <div class="footer__subtitle">О компании</div>
+                    <div class="footer__logo">
+                        <a href="#"><img src="icons/logo2.png" alt="logo"></a>
+                    </div>
+                    <div class="footer__descr">
+                        Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов.<br>
+                        Управление задачами
+                    </div>
+                </div>
+                <div class="footer__modules">
+                    <div class="footer__subtitle">Модули</div>
+                    <ul class="footer__menu">
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Обслуживание</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Паспорт объекта</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link"> Автоматизация бизнес процессов (BPM)</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link"> Проектное управление (РРМ)</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Управление подрядчиками</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link"> Персональный дашборд</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Управление задачами</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Управление алгоритмами</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Управление качеством</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Склад</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Service desk</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Календарь</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Prengi market</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__industries">
+                    <div class="footer__subtitle">Отрасли</div>
+                    <ul class="footer__menu">
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Промышленность</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Ритейл</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Фасилити</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Логистика</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link"> IT</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link"> HR</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__aboutUs">
+                    <div class="footer__subtitle">О нас</div>
+                        <ul class="footer__menu">
+                            <li class="footer__item">
+                                <a href="#" class="footer__link">История</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="#" class="footer__link"> Наши отношения</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="#" class="footer__link">Команда</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="#" class="footer__link">Контакты</a>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+            <div class="footer__rights">
+                <a href="#" class="footer__link">© Prengi Ink. 2008-2017 Все права защищены.</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="overlay">
+        <div class="modal">
+            <div class="modal__img"><img src="icons/logo.png" alt="logo"></div>
+            <div class="modal__close">&times;</div>
+            <div class="modal__content">
+                <h2 class="modal__title">Заполните форму заявки</h2>
+            <form action="#" class="modal__form">
+                <input type="text" class="modal__input"name="name"placeholder="Ваше имя..." required>
+                <input type="text" class="modal__input"name="phone"placeholder="Ваш телефон..." required>
+                <input type="text" class="modal__input"name="email"placeholder="Ваш E-mail..." required>
+                <button class="button modal__button">Отправить</button>
+            </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="up-btn"><img src="icons/top.png" alt="Наверх"></div>
     
     <script src="js/script.js"></script>
 </body>

@@ -137,4 +137,129 @@ document.addEventListener('DOMContentLoaded', () => {
         showContent(curentSlide);
     });
 
+    //Modal
+
+    const modalBtns = document.querySelectorAll('[data-modal]'),
+          closeBtns = document.querySelectorAll('.modal__close'),
+          modalOverlay = document.querySelector('.overlay');
+
+    modalBtns.forEach(item => {
+        item.addEventListener('click',() => {
+            modalOverlay.classList.add('overlay_active');
+            document.body.style.overflow ='hidden';
+            stopSlideShow();
+        });
+    });
+
+    closeBtns.forEach(item => {
+        item.addEventListener('click',() => {
+           closeModal();
+        });
+    });
+
+    function closeModal(){
+        modalOverlay.classList.remove('overlay_active');
+        document.body.style.overflow = '';
+        startSlideShow();
+    }
+
+    modalOverlay.addEventListener('click',(event) => {
+        if (event.target == modalOverlay)
+        closeModal();
+    });
+
+    document.addEventListener('keydown',(event) => {
+        if (event.code == 'Escape'){
+            closeModal();
+        }
+    });
+
+    //form
+    messages = {
+        loading: 'icons/spinner.svg',
+        success:['Спасибо за вашу заявку!','Наш менеджер свяжется с вами в ближайшее время!'],
+        error:['Что-то пошло не так...','Попробуйте отправить заявку позже.']
+    };
+
+    function showThanksModal(messageArr){
+        const modalChange = document.querySelector('.modal__content');
+        modalChange.classList.add('hide');
+
+        let modalThanks = document.createElement('div');
+        modalThanks.innerHTML = `
+        <h2 class="modal__title">${messageArr[0]}</h2>
+        <div class="modal__subtitle">${messageArr[1]}</div>
+        `;
+        document.querySelector('.modal').append(modalThanks);
+
+        setTimeout(() =>{
+            closeModal();
+        },3000);
+        setTimeout(() => {
+            modalThanks.remove();
+            modalChange.classList.remove('hide');
+        },5000);
+    }
+
+    const form = document.querySelector('form');
+    form.addEventListener('submit',(event) => {
+        event.preventDefault();
+
+        let statusMessage = document.createElement('img');
+        statusMessage.src = messages.loading;
+        statusMessage.style.cssText = 'display:block;margin:20px auto';
+        form.insertAdjacentElement('afterend',statusMessage);
+
+        const formData = new FormData(form);
+        let obj = {};
+
+        formData.forEach(function(value,key){
+            obj[key] = value;
+        });
+
+        fetch('mailer/smart.php', {
+            method: 'POST',
+            header: {
+                'Content-type':'application/json'
+            },
+            body:JSON.stringify(obj)
+        }).then((data) => {
+            data.text();
+        }).then(() => {
+            showThanksModal(messages.success);
+            statusMessage.remove();
+        }).catch(() => {
+            showThanksModal(messages.error);
+            statusMessage.remove();
+        }).finally(() => {
+            form.reset();
+        });
+
+    });
+
+    //to top button
+
+  const btn = document.querySelector('.up-btn');
+
+  document.addEventListener('scroll', () => {
+      let scrolled = window.pageYOffset;
+      let coords = document.documentElement.clientHeight;
+
+      if (scrolled > coords ){
+          btn.classList.add('up-btn_active');
+      } else {
+          btn.classList.remove('up-btn_active');
+      }
+  });
+
+  btn.addEventListener('click', backToTop);
+  
+  function backToTop() {
+      
+      if (window.pageYOffset > 0) {
+          window.scrollBy(0,-80);
+          setTimeout(backToTop,0);
+      } 
+  }
+
 });
